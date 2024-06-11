@@ -10,9 +10,9 @@ export const Header = () => {
           <h2>Logo</h2>
           <nav>
             <ul className="navegacao">
-              <Link to="/teste">Teste</Link>
               <Link to="/cliente">Cliente</Link>
               <Link to="/horarios">Horarios</Link>
+              <Link to="/admin">Admin</Link>
             </ul>
           </nav>
         </div>
