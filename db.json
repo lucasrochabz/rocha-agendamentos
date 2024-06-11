@@ -1,0 +1,12 @@
+{
+  "servicos": [
+    {
+      "nome": "Designer",
+      "preco": 25
+    },
+    {
+      "nome": "Manicure",
+      "preco": 50
+    }
+  ]
+}

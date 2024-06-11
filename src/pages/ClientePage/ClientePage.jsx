@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import './ClientePage.css';
 
@@ -6,8 +6,19 @@ export const ClientePage = () => {
   const [agendamentos, setAgendamentos] = useState([]);
   const [servicoTipo, setServicoTipo] = useState('');
   const [selectedHorario, setSelectedHorario] = useState(null);
+  const [data, setData] = useState([]);
 
   const horarios = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+
+  useEffect(() => {
+    const loadAlgumaCoisa = async () => {
+      const response = await fetch('http://localhost:3000/servicos');
+      const data = await response.json();
+      setData(data);
+      console.log(data);
+    };
+    loadAlgumaCoisa();
+  }, []);
 
   const getServicoTipo = (event) => {
     setServicoTipo(event.target.value);
