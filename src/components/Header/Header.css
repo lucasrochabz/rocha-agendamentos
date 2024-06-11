@@ -12,6 +12,11 @@
   padding: 1rem 0;
 }
 
+.logo {
+  color: #fff;
+  text-decoration: none;
+}
+
 .navegacao {
   display: flex;
   gap: 1rem;

@@ -1,18 +1,36 @@
+import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
-import { ProductList } from '../../components/ProductList/ProductList';
 import './ClientePage.css';
 
 export const ClientePage = () => {
+  const [agendamentos, setAgendamentos] = useState([]);
+  const [servicoTipo, setServicoTipo] = useState('');
+  const [selectedHorario, setSelectedHorario] = useState(null);
+
   const horarios = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-  const agendamentos = [9, 12, 13, 14, 8];
+  const getServicoTipo = (event) => {
+    setServicoTipo(event.target.value);
+  };
+
+  const getHorario = (event) => {
+    setSelectedHorario(+event.target.value);
+  };
 
   const horariosLivres = horarios.filter(
-    (horario) => !agendamentos.includes(horario),
+    (horario) =>
+      !agendamentos.some((agendamento) => agendamento.horario === horario),
   );
 
   const handleAgendamento = () => {
-    console.log('clicou em Fazer Agendamento');
+    if (selectedHorario && servicoTipo) {
+      setAgendamentos([
+        ...agendamentos,
+        { horario: selectedHorario, servico: servicoTipo },
+      ]);
+    } else {
+      alert('Por favor, selecione um horário e um tipo de serviço.');
+    }
   };
 
   return (
@@ -38,13 +56,31 @@ export const ClientePage = () => {
 
         <div className="calendario-item">
           <h3>Agendados</h3>
-          {agendamentos.map((agendamento) => (
-            <p key={agendamento}>Hora do atendimento: {agendamento}</p>
+          {agendamentos.map((agendamento, index) => (
+            <p key={index}>
+              Hora do atendimento: {agendamento.horario}, Serviço:
+              {agendamento.servico}
+            </p>
           ))}
         </div>
       </section>
 
-      {/* <ProductList /> */}
+      <label htmlFor="tipo-servico">Escolha o serviço</label>
+      <select name="tipo-servico" id="tipo-servico" onChange={getServicoTipo}>
+        <option value="">Selecione um serviço</option>
+        <option value="manicure">Manicure</option>
+        <option value="designer">Designer</option>
+      </select>
+
+      <label htmlFor="hora">Escolha o horário</label>
+      <select name="horario" id="horario" onChange={getHorario}>
+        <option value="">Selecione um horário</option>
+        {horariosLivres.map((horario) => (
+          <option key={horario} value={horario}>
+            {horario}
+          </option>
+        ))}
+      </select>
 
       <button onClick={handleAgendamento}>Fazer agendamento</button>
     </>
