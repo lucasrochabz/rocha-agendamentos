@@ -1,0 +1,12 @@
+.servicos {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.servicos-item {
+  border: 1px solid green;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}

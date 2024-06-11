@@ -10,7 +10,15 @@ export const ClientePage = () => {
   return (
     <>
       <Header />
-      <ProductList />
+      <div className="servicos">
+        <div className="servicos-item">
+          <h3>Manicure</h3>
+        </div>
+        <div className="servicos-item">
+          <h3>Designer de sobrancelha</h3>
+        </div>
+      </div>
+      {/* <ProductList /> */}
       <button onClick={handleAgendamento}>Fazer agendamento</button>
     </>
   );
