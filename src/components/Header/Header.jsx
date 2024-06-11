@@ -11,7 +11,6 @@ export const Header = () => {
           <nav>
             <ul className="navegacao">
               <Link to="/cliente">Cliente</Link>
-              <Link to="/horarios">Horarios</Link>
               <Link to="/admin">Admin</Link>
             </ul>
           </nav>
