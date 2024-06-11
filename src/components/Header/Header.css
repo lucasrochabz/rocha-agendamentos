@@ -1,0 +1,23 @@
+.header-bg {
+  background-color: #0052cc;
+}
+
+.header {
+  display: flex;
+  max-width: 1200px;
+  justify-content: space-between;
+  margin: 0 auto;
+  color: #fff;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.navegacao {
+  display: flex;
+  gap: 1rem;
+}
+
+.navegacao a {
+  color: #fff;
+  text-decoration: none;
+}
