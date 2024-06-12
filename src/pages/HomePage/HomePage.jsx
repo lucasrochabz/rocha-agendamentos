@@ -26,8 +26,8 @@ export const HomePage = () => {
       <Header />
       <main>
         <form className="formulario">
-          <label htmlFor="nome">Nome</label>
-          <input type="text" id="nome" onChange={handleChange} />
+          <label htmlFor="nometeste">Nome</label>
+          <input type="text" id="nometeste" onChange={handleChange} />
 
           <button type="button" className="btnEnter" onClick={handleEnter}>
             Entrar
