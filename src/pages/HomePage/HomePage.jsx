@@ -1,39 +1,72 @@
 import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
-import './HomePage.css';
 import { Register } from '../../components/Register/Register';
+import './HomePage.css';
 
 export const HomePage = () => {
-  const [nome, setNome] = useState('');
+  const [loginForm, setLoginForm] = useState({
+    emailLogin: '',
+    senhaLogin: '',
+  });
 
-  const handleChange = (event) => {
-    setNome(event.target.value);
+  const handleForm = (event) => {
+    const { name, value } = event.target;
+    setLoginForm({
+      ...loginForm,
+      [name]: value,
+    });
   };
 
-  const handleEnter = (event) => {
+  const handleEnter = async (event) => {
     event.preventDefault();
-    console.log(`${nome} entrou`);
-  };
+    console.log(loginForm);
 
-  const handleExit = (event) => {
-    event.preventDefault();
+    const response = await fetch('http://localhost:3000/users');
+    const users = await response.json();
 
-    console.log(`${nome} saiu`);
+    const email = loginForm.emailLogin;
+    const senha = loginForm.senhaLogin;
+
+    const usuarioEncontrado = users.find(
+      (user) => user.email === email && user.senha === senha,
+    );
+
+    if (usuarioEncontrado) {
+      alert('Você está logado!');
+      console.log('Email e senha encontrados', usuarioEncontrado);
+      return true;
+    } else {
+      alert('Dados incorretos');
+      console.log('Email ou senha incorretos');
+      return false;
+    }
   };
 
   return (
     <>
       <Header />
       <main>
-        <form className="formulario">
-          <label htmlFor="nometeste">Nome</label>
-          <input type="text" id="nometeste" onChange={handleChange} />
+        <form className="formulario" onSubmit={handleEnter}>
+          <label htmlFor="emailLogin">Email</label>
+          <input
+            type="text"
+            id="emailLogin"
+            name="emailLogin"
+            value={loginForm.emailLogin}
+            onChange={handleForm}
+          />
 
-          <button type="button" className="btnEnter" onClick={handleEnter}>
+          <label htmlFor="senhaLogin">Senha</label>
+          <input
+            type="password"
+            id="senhaLogin"
+            name="senhaLogin"
+            value={loginForm.nome}
+            onChange={handleForm}
+          />
+
+          <button type="submit" className="btnEnter">
             Entrar
-          </button>
-          <button type="button" className="btnExit" onClick={handleExit}>
-            Sair
           </button>
         </form>
       </main>

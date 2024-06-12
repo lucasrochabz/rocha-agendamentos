@@ -8,5 +8,14 @@
       "nome": "Manicure",
       "preco": 50
     }
+  ],
+  "users": [
+    {
+      "id": "0df7",
+      "nome": "Lucas",
+      "email": "lucas@email.com",
+      "celular": "85989174900",
+      "senha": "123456"
+    }
   ]
 }

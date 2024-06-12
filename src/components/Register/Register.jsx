@@ -17,9 +17,14 @@ export const Register = () => {
     });
   };
 
-  const printDados = (event) => {
+  const printDados = async (event) => {
     event.preventDefault();
-    console.log(formData);
+
+    const response = await fetch('http://localhost:3000/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
   };
 
   return (
@@ -41,7 +46,7 @@ export const Register = () => {
             type="text"
             id="nome"
             name="nome"
-            className="nome"
+            placeholder="Nome"
             value={formData.nome}
             onChange={handleFormChange}
           />
@@ -51,7 +56,7 @@ export const Register = () => {
             type="text"
             id="email"
             name="email"
-            className="email"
+            placeholder="Email"
             value={formData.email}
             onChange={handleFormChange}
           />
@@ -61,7 +66,7 @@ export const Register = () => {
             type="text"
             id="celular"
             name="celular"
-            className="celular"
+            placeholder="Celular"
             value={formData.celular}
             onChange={handleFormChange}
           />
@@ -71,6 +76,7 @@ export const Register = () => {
             type="password"
             id="senha"
             name="senha"
+            placeholder="Senha"
             value={formData.senha}
             onChange={handleFormChange}
           />
