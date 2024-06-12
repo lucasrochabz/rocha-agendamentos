@@ -1,13 +1,19 @@
-import './LoginPage.css';
+import './Register.css';
 
-export const LoginPage = () => {
+export const Register = () => {
   return (
     <>
-      <h2>Cadastre-se</h2>
-      <p>É rápido e fácil. ref width 432</p>
-
       <div className="create-user">
+        <div className="register-content">
+          <h2>Rocha Agendamentos</h2>
+          <p>
+            A Rocha Agendamentos ajuda você a se conectar com seu profissional
+            favorito.
+          </p>
+        </div>
         <form className="create-user-form">
+          <h2>Cadastre-se</h2>
+          <p>É rápido e fácil.</p>
           <label htmlFor="nome">Nome</label>
           <input type="text" id="nome" className="nome" />
 

@@ -8,7 +8,7 @@ export const Header = () => {
       <header className="header-bg">
         <div className="header">
           <Link className="logo" to="/">
-            <h2>Logo</h2>
+            <h2>Home</h2>
           </Link>
           <nav>
             <ul className="navegacao">

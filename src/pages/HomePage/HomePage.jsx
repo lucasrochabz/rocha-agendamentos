@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import './HomePage.css';
+import { Register } from '../../components/Register/Register';
 
 export const HomePage = () => {
   const [nome, setNome] = useState('');
@@ -36,6 +37,8 @@ export const HomePage = () => {
           </button>
         </form>
       </main>
+
+      <Register />
     </>
   );
 };

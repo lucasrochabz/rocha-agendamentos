@@ -5,7 +5,7 @@ import { HomePage } from './pages/HomePage/HomePage';
 import { ClientePage } from './pages/ClientePage/ClientePage.jsx';
 import { App } from './App.jsx';
 import { AdminPage } from './pages/AdminPage/AdminPage.jsx';
-import { LoginPage } from './pages/LoginPage/LoginPage.jsx';
+import { Register } from './components/Register/Register.jsx';
 // import './index.css';
 
 const router = createBrowserRouter([
@@ -20,10 +20,6 @@ const router = createBrowserRouter([
   {
     path: '/admin',
     element: <AdminPage />,
-  },
-  {
-    path: '/registrar',
-    element: <LoginPage />,
   },
 ]);
 
