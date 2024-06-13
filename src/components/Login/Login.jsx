@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import './Login.css';
+import { Register } from '../Register/Register';
 
 export const Login = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   const [loginForm, setLoginForm] = useState({
     emailLogin: '',
     senhaLogin: '',
@@ -40,6 +43,14 @@ export const Login = () => {
     }
   };
 
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
   return (
     <>
       <form className="login-form" onSubmit={handleEnter}>
@@ -66,7 +77,24 @@ export const Login = () => {
         <button type="submit" className="btnEnter">
           Entrar
         </button>
+
+        <button
+          type="button"
+          className="btn-open-modal"
+          onClick={handleOpenModal}
+        >
+          Abrir Modal
+        </button>
+
+        <button
+          type="button"
+          className="btn-open-modal"
+          onClick={handleCloseModal}
+        >
+          Fechar Modal
+        </button>
       </form>
+      {openModal && <Register />}
     </>
   );
 };
