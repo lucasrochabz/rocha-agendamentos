@@ -24,18 +24,30 @@ body {
   font-size: 0.8rem;
   font-weight: bold;
   margin-top: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .login-form input {
   font-size: 1rem;
   padding: 0.4rem;
-  border: 1px solid #000;
+  border: 1px solid #aaa;
   border-radius: 5px;
 }
 
 .btnEnter {
   margin: 1rem 0;
   background-color: #0052cc;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-open-register {
+  margin-bottom: 1rem;
+  background-color: #42b72a;
   color: #fff;
   border: none;
   padding: 0.8rem 1.2rem;
