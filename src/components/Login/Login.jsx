@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './Login.css';
 import { Register } from '../Register/Register';
+import './Login.css';
 
 export const Login = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -45,10 +45,6 @@ export const Login = () => {
 
   const handleOpenModal = () => {
     setOpenModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
   };
 
   return (
