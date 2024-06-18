@@ -57,6 +57,27 @@ export const ClientePage = () => {
         </div>
       </div>
 
+      <div className="controle-agendamento">
+        <label htmlFor="tipo-servico">Escolha o serviço</label>
+        <select name="tipo-servico" id="tipo-servico" onChange={getServicoTipo}>
+          <option value="">Selecione um serviço</option>
+          <option value="manicure">Manicure</option>
+          <option value="designer">Designer</option>
+        </select>
+
+        <label htmlFor="hora">Escolha o horário</label>
+        <select name="horario" id="horario" onChange={getHorario}>
+          <option value="">Selecione um horário</option>
+          {horariosLivres.map((horario) => (
+            <option key={horario} value={horario}>
+              {horario}
+            </option>
+          ))}
+        </select>
+
+        <button onClick={handleAgendamento}>Fazer agendamento</button>
+      </div>
+
       <section className="calendario">
         <div className="calendario-item">
           <h3>Horários Disponíveis</h3>
@@ -75,25 +96,6 @@ export const ClientePage = () => {
           ))}
         </div>
       </section>
-
-      <label htmlFor="tipo-servico">Escolha o serviço</label>
-      <select name="tipo-servico" id="tipo-servico" onChange={getServicoTipo}>
-        <option value="">Selecione um serviço</option>
-        <option value="manicure">Manicure Teste</option>
-        <option value="designer">Designer</option>
-      </select>
-
-      <label htmlFor="hora">Escolha o horário</label>
-      <select name="horario" id="horario" onChange={getHorario}>
-        <option value="">Selecione um horário</option>
-        {horariosLivres.map((horario) => (
-          <option key={horario} value={horario}>
-            {horario}
-          </option>
-        ))}
-      </select>
-
-      <button onClick={handleAgendamento}>Fazer agendamento</button>
     </>
   );
 };

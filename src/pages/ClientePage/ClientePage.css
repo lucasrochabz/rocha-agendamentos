@@ -27,3 +27,11 @@
   align-items: center;
   border-radius: 5px;
 }
+
+.controle-agendamento {
+  background-color: #aaa;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 1rem auto;
+}
