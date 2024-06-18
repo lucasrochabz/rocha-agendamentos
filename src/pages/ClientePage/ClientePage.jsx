@@ -79,7 +79,7 @@ export const ClientePage = () => {
       <label htmlFor="tipo-servico">Escolha o serviço</label>
       <select name="tipo-servico" id="tipo-servico" onChange={getServicoTipo}>
         <option value="">Selecione um serviço</option>
-        <option value="manicure">Manicure</option>
+        <option value="manicure">Manicure Teste</option>
         <option value="designer">Designer</option>
       </select>
 
