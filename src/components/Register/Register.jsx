@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Register.css';
 
-export const Register = () => {
+export const Register = ({ closeModal }) => {
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -30,14 +30,10 @@ export const Register = () => {
   return (
     <>
       <div className="create-user">
-        <div className="register-content">
-          <h2>Rocha Agendamentos</h2>
-          <p>
-            A Rocha Agendamentos ajuda você a se conectar com seu profissional
-            favorito.
-          </p>
-        </div>
         <form className="create-user-form">
+          <button type="button" onClick={closeModal}>
+            Fechar Modal
+          </button>
           <h2>Cadastre-se</h2>
           <p>É rápido e fácil.</p>
 

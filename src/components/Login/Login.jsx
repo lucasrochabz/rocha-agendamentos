@@ -53,48 +53,50 @@ export const Login = () => {
 
   return (
     <>
-      <form className="login-form" onSubmit={handleEnter}>
-        <label htmlFor="emailLogin">Email</label>
-        <input
-          type="text"
-          id="emailLogin"
-          name="emailLogin"
-          placeholder="Email"
-          value={loginForm.emailLogin}
-          onChange={handleForm}
-        />
+      <section className="login-container">
+        <div className="register-content">
+          <h2>Rocha Agendamentos</h2>
+          <p>
+            A Rocha Agendamentos ajuda você a se conectar com seu profissional
+            favorito.
+          </p>
+        </div>
 
-        <label htmlFor="senhaLogin">Senha</label>
-        <input
-          type="password"
-          id="senhaLogin"
-          name="senhaLogin"
-          placeholder="Senha"
-          value={loginForm.nome}
-          onChange={handleForm}
-        />
+        <form className="login-form" onSubmit={handleEnter}>
+          <label htmlFor="emailLogin">Email</label>
+          <input
+            type="text"
+            id="emailLogin"
+            name="emailLogin"
+            placeholder="Email"
+            value={loginForm.emailLogin}
+            onChange={handleForm}
+          />
 
-        <button type="submit" className="btnEnter">
-          Entrar
-        </button>
+          <label htmlFor="senhaLogin">Senha</label>
+          <input
+            type="password"
+            id="senhaLogin"
+            name="senhaLogin"
+            placeholder="Senha"
+            value={loginForm.nome}
+            onChange={handleForm}
+          />
 
-        <button
-          type="button"
-          className="btn-open-modal"
-          onClick={handleOpenModal}
-        >
-          Abrir Modal
-        </button>
+          <button type="submit" className="btnEnter">
+            Entrar
+          </button>
 
-        <button
-          type="button"
-          className="btn-open-modal"
-          onClick={handleCloseModal}
-        >
-          Fechar Modal
-        </button>
-      </form>
-      {openModal && <Register />}
+          <button
+            type="button"
+            className="btn-open-modal"
+            onClick={handleOpenModal}
+          >
+            Abrir Modal
+          </button>
+        </form>
+      </section>
+      {openModal && <Register closeModal={() => setOpenModal(false)} />}
     </>
   );
 };
