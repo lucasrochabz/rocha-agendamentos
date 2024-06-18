@@ -85,10 +85,10 @@ export const Login = () => {
 
           <button
             type="button"
-            className="btn-open-modal"
+            className="btn-open-register"
             onClick={handleOpenModal}
           >
-            Abrir Modal
+            Registre-se
           </button>
         </form>
       </section>
