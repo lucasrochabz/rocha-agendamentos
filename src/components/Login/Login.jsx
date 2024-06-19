@@ -51,8 +51,8 @@ export const Login = () => {
     <>
       <section className="login-container">
         <div className="register-content">
-          <h2>Rocha Agendamentos</h2>
-          <p>
+          <h2 className="title">Rocha Agendamentos</h2>
+          <p className="sub-title">
             A Rocha Agendamentos ajuda você a se conectar com seu profissional
             favorito.
           </p>

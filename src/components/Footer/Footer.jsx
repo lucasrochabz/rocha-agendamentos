@@ -3,7 +3,9 @@ import './Footer.css';
 export const Footer = () => {
   return (
     <>
-      <h2>Footer</h2>
+      <footer className="footer">
+        <h3>Feito por Lucas Rocha</h3>
+      </footer>
     </>
   );
 };

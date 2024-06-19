@@ -4,10 +4,20 @@ body {
 
 .login-container {
   background-color: #f0f2f5;
-  padding: 1rem;
+  padding: 18rem 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 4rem;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  width: 500px;
 }
 
 .login-form {
@@ -54,6 +64,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
+  align-self: center;
 }
 
 .btnEnter:hover {
